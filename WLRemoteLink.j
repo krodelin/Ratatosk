@@ -113,7 +113,7 @@ WLRemoteLinkStateRequestFailureError    = 2;
     return [CPSet setWithObjects:"state"];
 }
 
-- (void)init
+- (id)init
 {
     if (self = [super init])
     {
