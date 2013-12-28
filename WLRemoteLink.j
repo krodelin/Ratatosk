@@ -32,6 +32,7 @@
  */
 
 @import <Foundation/Foundation.j>
+@import <AppKit/CPColor.j>
 
 var SharedWLRemoteLink      = nil,
     DefaultBaseUrl          = '/api/',
