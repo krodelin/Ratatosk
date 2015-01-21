@@ -34,6 +34,8 @@
 @import <Foundation/Foundation.j>
 @import <AppKit/CPColor.j>
 
+@typedef WLRemoteActionType
+
 var SharedWLRemoteLink      = nil,
     DefaultBaseUrl          = '/api/',
     WLRemoteLinkRetryDelay  = 10; // in seconds
