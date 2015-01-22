@@ -314,7 +314,7 @@ function CamelCaseToHyphenated(camelCase)
 
         if (!_suppressRemotePropertiesObservation)
         {
-            [self addObserver:self forKeyPath:[property localName] options:nil context:property];
+            [self addObserver:self forKeyPath:[property localName] options:(CPKeyValueObservingOptionNew | CPKeyValueObservingOptionOld)  context:property];
             // FIXME Since the undo manager is no longer read from a central place, this will do nothing.
             // This action needs to be taken when setUndoManager: is received instead.
             [self registerKeyForUndoManagement:property];
@@ -353,7 +353,7 @@ function CamelCaseToHyphenated(camelCase)
     while (property = [remotePropertiesEnumerator nextObject])
     {
         [self registerKeyForUndoManagement:property];
-        [self addObserver:self forKeyPath:[property localName] options:nil context:property];
+        [self addObserver:self forKeyPath:[property localName] options:(CPKeyValueObservingOptionNew | CPKeyValueObservingOptionOld) context:property];
 
         if (_shouldAutoLoad && [[self class] automaticallyLoadsRemoteObjectsForKey:[property localName]])
         {
